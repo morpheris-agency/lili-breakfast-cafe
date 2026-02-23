@@ -31,7 +31,7 @@ export default function InstagramFeed() {
                     transition={{ delay: 0.1 }}
                     className="text-text-dark/70 font-body text-lg max-w-xl mx-auto"
                 >
-                    Follow us on <a href="#" className="font-bold underline decoration-accent-pitaya decoration-2 underline-offset-4 hover:text-accent-pitaya transition-colors">@lili.breakfast.cafe</a> for daily inspiration.
+                    Follow us on <a href="https://www.instagram.com/lili.breakfast.cafe/" target="_blank" rel="noopener noreferrer" className="font-bold underline decoration-accent-pitaya decoration-2 underline-offset-4 hover:text-accent-pitaya transition-colors">@lili.breakfast.cafe</a> for daily inspiration.
                 </motion.p>
             </div>
 

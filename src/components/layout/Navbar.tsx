@@ -10,6 +10,14 @@ export default function Navbar() {
                 <Link href="/" className="flex items-center group relative w-20 h-20 shrink-0">
                     <Image src="/logo.svg" alt="Lili Cafe Logo" fill className="object-contain object-left transition-transform duration-300" priority />
                 </Link>
+                <div className="flex gap-4 items-center">
+                    <Link
+                        href="/menu"
+                        className="bg-accent-mango text-white px-5 py-2.5 rounded-full font-display font-bold uppercase text-[12px] tracking-wider shadow-sm"
+                    >
+                        Menu
+                    </Link>
+                </div>
             </div>
 
             {/* Desktop View */}

@@ -69,7 +69,7 @@ export default function ContactPage() {
                         </div>
                         <div>
                             <h3 className="font-display font-black uppercase tracking-widest text-[16px] text-text-dark mb-2">Social</h3>
-                            <a href="#" className="font-body text-lg text-text-dark/80 hover:text-accent-pitaya transition-colors underline decoration-2 decoration-accent-pitaya/30 underline-offset-4">
+                            <a href="https://www.instagram.com/lili.breakfast.cafe/" target="_blank" rel="noopener noreferrer" className="font-body text-lg text-text-dark/80 hover:text-accent-pitaya transition-colors underline decoration-2 decoration-accent-pitaya/30 underline-offset-4">
                                 @lili.breakfast.cafe
                             </a>
                         </div>
