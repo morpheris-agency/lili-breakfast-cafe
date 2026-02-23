@@ -32,14 +32,14 @@ export default function MenuPageClient({ categories }: { categories: MenuCategor
         show: {
             opacity: 1,
             y: 0,
-            transition: { type: "spring", stiffness: 100, damping: 20 }
+            transition: { type: "spring" as const, stiffness: 100, damping: 20 }
         }
     };
 
     return (
         <div className="max-w-6xl mx-auto px-6 md:px-12 py-12 md:py-24">
             <div className="text-center mb-16">
-                <h1 className="text-5xl md:text-7xl font-heading font-bold text-text-dark mb-6">
+                <h1 className="text-6xl md:text-8xl font-heading font-normal text-text-dark mb-6">
                     Our <span className="text-accent-mango">Menu</span>
                 </h1>
                 <p className="text-lg text-text-dark/70 font-body max-w-2xl mx-auto">
@@ -54,9 +54,9 @@ export default function MenuPageClient({ categories }: { categories: MenuCategor
                         <button
                             key={`tab-${cat._id}`}
                             onClick={() => scrollToCategory(cat._id)}
-                            className={`snap-start whitespace-nowrap px-5 py-2 md:px-6 md:py-3 rounded-full font-heading font-bold transition-all duration-300 ${activeTab === cat._id
-                                    ? 'bg-accent-mango text-white shadow-md'
-                                    : 'bg-white text-text-dark hover:bg-bg-secondary'
+                            className={`snap-start whitespace-nowrap px-5 py-2 md:px-6 md:py-3 rounded-full font-display font-bold uppercase tracking-wider text-[13px] transition-all duration-300 ${activeTab === cat._id
+                                ? 'bg-accent-mango text-white shadow-md'
+                                : 'bg-white text-text-dark hover:bg-bg-secondary'
                                 }`}
                         >
                             {cat.title}
@@ -70,7 +70,7 @@ export default function MenuPageClient({ categories }: { categories: MenuCategor
                 {categories.map((category) => (
                     <section key={category._id} id={category._id} className="scroll-mt-40">
                         <div className="mb-12">
-                            <h2 className="text-4xl font-heading font-bold text-text-dark mb-4 inline-block relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-1/2 after:h-1 after:bg-accent-pitaya after:rounded-full">
+                            <h2 className="text-4xl md:text-5xl font-display font-black uppercase tracking-widest text-[#1a1a1a] mb-4 inline-block relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-1/2 after:h-1 after:bg-accent-pitaya after:rounded-full">
                                 {category.title}
                             </h2>
                             {category.description && (
@@ -103,7 +103,7 @@ export default function MenuPageClient({ categories }: { categories: MenuCategor
                                             <span className="text-5xl opacity-50">🍽️</span>
                                         )}
                                         {item.isBestSeller && (
-                                            <div className="absolute top-3 left-3 bg-accent-mango text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-md">
+                                            <div className="absolute top-3 left-3 bg-accent-mango text-white px-3 py-1 rounded-full font-display font-bold uppercase tracking-widest text-[10px] shadow-md">
                                                 ⭐ Best Seller
                                             </div>
                                         )}
@@ -112,8 +112,8 @@ export default function MenuPageClient({ categories }: { categories: MenuCategor
                                     {/* Content */}
                                     <div className="flex flex-col flex-grow">
                                         <div className="flex justify-between items-start mb-3 gap-4">
-                                            <h3 className="font-heading font-bold text-xl text-text-dark">{item.title}</h3>
-                                            <span className="font-heading font-bold text-lg text-accent-strawberry whitespace-nowrap bg-accent-strawberry/10 px-3 py-1 rounded-xl">
+                                            <h3 className="font-heading font-normal text-3xl text-text-dark">{item.title}</h3>
+                                            <span className="font-display font-bold text-xl text-accent-strawberry whitespace-nowrap bg-accent-strawberry/10 px-3 py-1 rounded-xl">
                                                 {item.price} THB
                                             </span>
                                         </div>
