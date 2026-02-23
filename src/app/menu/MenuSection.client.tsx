@@ -64,8 +64,8 @@ export default function MenuSection({ category, index }: { category: Category, i
 
                         <div className="flex-1 flex flex-col justify-center">
                             <div className="flex justify-between items-start mb-2 gap-4">
-                                <h3 className="font-heading font-normal text-3xl text-text-dark">{item.title}</h3>
-                                <span className="font-display font-bold text-xl text-accent-mango whitespace-nowrap mt-1">฿{item.price}</span>
+                                <h3 className="font-script font-normal text-3xl text-text-dark">{item.title}</h3>
+                                <span className="font-display font-black text-xl text-accent-mango whitespace-nowrap mt-1">฿{item.price}</span>
                             </div>
                             <p className="text-text-dark/60 font-body text-sm mb-4 line-clamp-2">
                                 {item.description}

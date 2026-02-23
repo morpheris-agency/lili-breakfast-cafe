@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@config "../../tailwind.config.js";
 
 @theme {
   --color-bg-primary: #FFFDF7;
@@ -8,10 +9,6 @@
   --color-accent-strawberry: #E63946;
   --color-accent-sky: #A8DADC;
   --color-text-dark: #264653;
-
-  --font-heading: var(--font-lobster), ui-serif, Georgia, serif;
-  --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
-  --font-body: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -29,6 +26,6 @@
   h4,
   h5,
   h6 {
-    @apply font-heading;
+    @apply font-script;
   }
 }

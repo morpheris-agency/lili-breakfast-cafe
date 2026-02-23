@@ -8,7 +8,7 @@ export default function Home() {
 
       {/* Short teaser section before Instagram */}
       <section className="py-24 px-6 max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl md:text-6xl font-heading font-normal text-text-dark leading-tight mb-8">
+        <h2 className="font-script text-5xl text-text-dark leading-tight mb-8">
           More than just food. It's a <span className="text-accent-pitaya">feeling</span>.
         </h2>
         <p className="text-lg font-body text-text-dark/80 max-w-2xl mx-auto leading-relaxed">

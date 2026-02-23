@@ -41,12 +41,12 @@ export default function Hero() {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
-                        className="inline-block px-5 py-2.5 bg-accent-sky/30 text-text-dark font-display font-bold uppercase tracking-widest rounded-full text-[11px]"
+                        className="inline-block px-5 py-2.5 bg-accent-sky/30 text-text-dark font-display font-black uppercase tracking-widest rounded-full text-[11px]"
                     >
                         Organic & Fresh in Pai 🌱
                     </motion.div>
 
-                    <h1 className="text-6xl md:text-8xl font-heading font-normal leading-[1.1] text-text-dark tracking-normal">
+                    <h1 className="font-script text-5xl leading-[1.1] text-text-dark tracking-normal">
                         Nourish your <br />
                         body, <span className="text-accent-pitaya">feed</span> your <br />
                         soul.

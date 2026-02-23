@@ -12,7 +12,7 @@ export default function ContactPage() {
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-6xl md:text-8xl font-heading font-normal text-text-dark mb-6"
+                    className="font-script text-5xl text-text-dark mb-6"
                 >
                     Find <span className="text-accent-strawberry">Us</span>
                 </motion.h1>

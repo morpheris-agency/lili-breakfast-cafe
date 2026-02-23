@@ -13,7 +13,7 @@ export default function AboutPage() {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
-                    className="inline-block px-5 py-2.5 bg-accent-mango/20 text-accent-mango font-display font-bold uppercase tracking-widest rounded-full text-[11px] mb-6"
+                    className="inline-block px-5 py-2.5 bg-accent-mango/20 text-accent-mango font-display font-black uppercase tracking-widest rounded-full text-[11px] mb-6"
                 >
                     Our Story
                 </motion.div>
@@ -21,7 +21,7 @@ export default function AboutPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="text-6xl md:text-8xl font-heading font-normal text-text-dark mb-6"
+                    className="font-script text-5xl text-text-dark mb-6"
                 >
                     The <span className="text-accent-sky">Magic</span> of Pai
                 </motion.h1>
@@ -46,7 +46,7 @@ export default function AboutPage() {
                     transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
                     className="flex flex-col gap-6"
                 >
-                    <h2 className="text-4xl md:text-5xl font-heading font-normal leading-tight text-text-dark">
+                    <h2 className="font-script text-5xl leading-tight text-text-dark">
                         From a tiny cart to <br />a conscious space.
                     </h2>
                     <div className="space-y-4 text-text-dark/80 font-body text-lg leading-relaxed">
@@ -56,7 +56,7 @@ export default function AboutPage() {
                         <p>
                             We source our lush fruits from local farmers in the Mae Hong Son province, ensuring that every smoothie bowl gives back to the land that provides it.
                         </p>
-                        <p className="font-heading font-normal text-accent-mango text-3xl mt-4 italic">
+                        <p className="font-script font-normal text-accent-mango text-3xl mt-4 italic">
                             "Eat good, feel good, do good."
                         </p>
                     </div>
@@ -72,7 +72,7 @@ export default function AboutPage() {
                 className="w-full bg-accent-pitaya/10 rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden"
             >
                 <div className="absolute top-0 right-0 w-64 h-64 bg-accent-mango/20 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2" />
-                <h3 className="text-4xl md:text-6xl font-heading font-normal text-text-dark mb-6">
+                <h3 className="font-script text-5xl text-text-dark mb-6">
                     Come say hi!
                 </h3>
                 <p className="text-lg font-body text-text-dark/70 max-w-xl mx-auto mb-8">

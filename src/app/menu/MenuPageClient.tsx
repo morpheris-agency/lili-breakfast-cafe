@@ -39,7 +39,7 @@ export default function MenuPageClient({ categories }: { categories: MenuCategor
     return (
         <div className="max-w-6xl mx-auto px-6 md:px-12 py-12 md:py-24">
             <div className="text-center mb-16">
-                <h1 className="text-6xl md:text-8xl font-heading font-normal text-text-dark mb-6">
+                <h1 className="font-script text-5xl text-text-dark mb-6">
                     Our <span className="text-accent-mango">Menu</span>
                 </h1>
                 <p className="text-lg text-text-dark/70 font-body max-w-2xl mx-auto">
@@ -54,7 +54,7 @@ export default function MenuPageClient({ categories }: { categories: MenuCategor
                         <button
                             key={`tab-${cat._id}`}
                             onClick={() => scrollToCategory(cat._id)}
-                            className={`snap-start whitespace-nowrap px-5 py-2 md:px-6 md:py-3 rounded-full font-display font-bold uppercase tracking-wider text-[13px] transition-all duration-300 ${activeTab === cat._id
+                            className={`snap-start whitespace-nowrap px-5 py-2 md:px-6 md:py-3 rounded-full font-display font-black uppercase tracking-widest text-[13px] transition-all duration-300 ${activeTab === cat._id
                                 ? 'bg-accent-mango text-white shadow-md'
                                 : 'bg-white text-text-dark hover:bg-bg-secondary'
                                 }`}
@@ -103,7 +103,7 @@ export default function MenuPageClient({ categories }: { categories: MenuCategor
                                             <span className="text-5xl opacity-50">🍽️</span>
                                         )}
                                         {item.isBestSeller && (
-                                            <div className="absolute top-3 left-3 bg-accent-mango text-white px-3 py-1 rounded-full font-display font-bold uppercase tracking-widest text-[10px] shadow-md">
+                                            <div className="absolute top-3 left-3 bg-accent-mango text-white px-3 py-1 rounded-full font-display font-black uppercase tracking-widest text-[10px] shadow-md">
                                                 ⭐ Best Seller
                                             </div>
                                         )}
@@ -112,8 +112,8 @@ export default function MenuPageClient({ categories }: { categories: MenuCategor
                                     {/* Content */}
                                     <div className="flex flex-col flex-grow">
                                         <div className="flex justify-between items-start mb-3 gap-4">
-                                            <h3 className="font-heading font-normal text-3xl text-text-dark">{item.title}</h3>
-                                            <span className="font-display font-bold text-xl text-accent-strawberry whitespace-nowrap bg-accent-strawberry/10 px-3 py-1 rounded-xl">
+                                            <h3 className="font-script font-normal text-3xl text-text-dark">{item.title}</h3>
+                                            <span className="font-display font-black text-xl text-accent-strawberry whitespace-nowrap bg-accent-strawberry/10 px-3 py-1 rounded-xl">
                                                 {item.price} THB
                                             </span>
                                         </div>

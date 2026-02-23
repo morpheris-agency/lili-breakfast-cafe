@@ -11,7 +11,7 @@ export default function Footer() {
                     </p>
                 </div>
 
-                <div className="flex flex-col md:flex-row gap-6 md:gap-12 font-display font-bold uppercase tracking-wider text-[13px]">
+                <div className="flex flex-col md:flex-row gap-6 md:gap-12 font-display font-black uppercase tracking-widest text-[13px]">
                     <Link href="/menu" className="hover:text-accent-pitaya transition-colors">Breakfast Menu</Link>
                     <Link href="/about" className="hover:text-accent-pitaya transition-colors">The Magic of Pai</Link>
                     <Link href="/contact" className="hover:text-accent-pitaya transition-colors">Find Us</Link>
