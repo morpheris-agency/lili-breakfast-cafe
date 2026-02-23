@@ -1,20 +1,26 @@
 import type { Metadata } from "next";
-import { Fredoka, DM_Sans } from "next/font/google";
+import { Lobster, Montserrat, Nunito } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 
-const fredoka = Fredoka({
-  variable: "--font-fredoka",
+const lobster = Lobster({
+  variable: "--font-lobster",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400"],
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["700", "900"],
+});
+
+const nunito = Nunito({
+  variable: "--font-nunito",
+  subsets: ["latin"],
+  weight: ["400", "600"],
 });
 
 export const metadata: Metadata = {
@@ -29,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${fredoka.variable} ${dmSans.variable} font-body bg-bg-primary text-text-dark antialiased selection:bg-accent-pitaya/20 selection:text-accent-pitaya`}>
+      <body className={`${lobster.variable} ${montserrat.variable} ${nunito.variable} font-body bg-bg-primary text-text-dark antialiased selection:bg-accent-pitaya/20 selection:text-accent-pitaya`}>
         <SmoothScrollProvider>
           <Navbar />
           <main className="pt-24 min-h-screen">

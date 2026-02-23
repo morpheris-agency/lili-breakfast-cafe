@@ -13,7 +13,7 @@ interface ButtonProps {
 }
 
 export default function Button({ children, href, onClick, variant = 'primary', className = '' }: ButtonProps) {
-    const baseStyles = "inline-flex items-center justify-center px-8 py-4 rounded-full font-heading font-bold text-lg transition-colors shadow-sm"
+    const baseStyles = "inline-flex items-center justify-center px-8 py-4 rounded-full font-display font-bold uppercase tracking-widest text-[13px] transition-colors shadow-sm"
     const variants = {
         primary: "bg-accent-mango text-white hover:bg-[#F2AE00]",
         secondary: "bg-transparent text-text-dark border-2 border-text-dark/10 hover:border-text-dark/20",
@@ -25,7 +25,7 @@ export default function Button({ children, href, onClick, variant = 'primary', c
     const animationProps = {
         whileHover: { scale: 0.97 },
         whileTap: { scale: 0.92 },
-        transition: { type: "spring", stiffness: 400, damping: 17 }
+        transition: { type: "spring" as const, stiffness: 400, damping: 17 }
     }
 
     if (href) {

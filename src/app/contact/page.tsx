@@ -12,7 +12,7 @@ export default function ContactPage() {
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-5xl md:text-7xl font-heading font-bold text-text-dark mb-6"
+                    className="text-6xl md:text-8xl font-heading font-normal text-text-dark mb-6"
                 >
                     Find <span className="text-accent-strawberry">Us</span>
                 </motion.h1>
@@ -40,7 +40,7 @@ export default function ContactPage() {
                             <MapPin size={28} className="text-text-dark" />
                         </div>
                         <div>
-                            <h3 className="font-heading font-bold text-2xl text-text-dark mb-2">Address</h3>
+                            <h3 className="font-display font-black uppercase tracking-widest text-[16px] text-text-dark mb-2">Address</h3>
                             <p className="font-body text-lg text-text-dark/80">
                                 123 Walking Street Alley<br />
                                 Tambon Wiang Tai, Amphoe Pai<br />
@@ -54,7 +54,7 @@ export default function ContactPage() {
                             <Clock size={28} className="text-text-dark" />
                         </div>
                         <div>
-                            <h3 className="font-heading font-bold text-2xl text-text-dark mb-2">Opening Hours</h3>
+                            <h3 className="font-display font-black uppercase tracking-widest text-[16px] text-text-dark mb-2">Opening Hours</h3>
                             <p className="font-body text-lg text-text-dark/80">
                                 Mon - Fri: 8 AM–4 PM<br />
                                 Saturday: <span className="text-accent-strawberry font-bold">Closed</span><br />
@@ -68,7 +68,7 @@ export default function ContactPage() {
                             <Instagram size={28} className="text-text-dark" />
                         </div>
                         <div>
-                            <h3 className="font-heading font-bold text-2xl text-text-dark mb-2">Social</h3>
+                            <h3 className="font-display font-black uppercase tracking-widest text-[16px] text-text-dark mb-2">Social</h3>
                             <a href="#" className="font-body text-lg text-text-dark/80 hover:text-accent-pitaya transition-colors underline decoration-2 decoration-accent-pitaya/30 underline-offset-4">
                                 @lili.breakfast.cafe
                             </a>

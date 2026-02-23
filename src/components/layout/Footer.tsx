@@ -5,13 +5,13 @@ export default function Footer() {
         <footer className="bg-bg-secondary py-12 px-6 md:px-12 mt-20 rounded-t-[3rem]">
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
                 <div>
-                    <h3 className="font-heading font-bold text-2xl text-accent-mango mb-2">Lili Breakfast Cafe</h3>
+                    <h3 className="font-display font-black uppercase tracking-widest text-xl text-accent-mango mb-2">Lili Breakfast Cafe</h3>
                     <p className="font-body text-text-dark/80 max-w-sm">
                         Nourishing bowls, vibrant smoothies, and a cozy aesthetic nestled in the magic of Pai.
                     </p>
                 </div>
 
-                <div className="flex flex-col md:flex-row gap-6 md:gap-12 font-heading font-medium">
+                <div className="flex flex-col md:flex-row gap-6 md:gap-12 font-display font-bold uppercase tracking-wider text-[13px]">
                     <Link href="/menu" className="hover:text-accent-pitaya transition-colors">Breakfast Menu</Link>
                     <Link href="/about" className="hover:text-accent-pitaya transition-colors">The Magic of Pai</Link>
                     <Link href="/contact" className="hover:text-accent-pitaya transition-colors">Find Us</Link>

@@ -20,7 +20,7 @@ export default function InstagramFeed() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-3xl md:text-5xl font-heading font-bold mb-4"
+                    className="text-4xl md:text-6xl font-heading font-normal mb-4"
                 >
                     Join the <span className="text-accent-mango">Vibe</span>
                 </motion.h2>

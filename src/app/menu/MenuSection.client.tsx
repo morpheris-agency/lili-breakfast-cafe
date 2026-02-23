@@ -34,7 +34,7 @@ export default function MenuSection({ category, index }: { category: Category, i
             className="mb-24"
         >
             <div className="mb-12 text-center md:text-left">
-                <h2 className="text-4xl font-heading font-bold text-text-dark mb-4 inline-block relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-1/2 after:h-1 after:bg-accent-mango after:rounded-full">
+                <h2 className="text-4xl md:text-5xl font-display font-black uppercase tracking-widest text-[#1a1a1a] mb-4 inline-block relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-1/2 after:h-1 after:bg-accent-mango after:rounded-full">
                     {category.title}
                 </h2>
                 {category.description && (
@@ -64,8 +64,8 @@ export default function MenuSection({ category, index }: { category: Category, i
 
                         <div className="flex-1 flex flex-col justify-center">
                             <div className="flex justify-between items-start mb-2 gap-4">
-                                <h3 className="font-heading font-bold text-xl text-text-dark">{item.title}</h3>
-                                <span className="font-heading font-bold text-lg text-accent-mango whitespace-nowrap">฿{item.price}</span>
+                                <h3 className="font-heading font-normal text-3xl text-text-dark">{item.title}</h3>
+                                <span className="font-display font-bold text-xl text-accent-mango whitespace-nowrap mt-1">฿{item.price}</span>
                             </div>
                             <p className="text-text-dark/60 font-body text-sm mb-4 line-clamp-2">
                                 {item.description}
@@ -74,7 +74,7 @@ export default function MenuSection({ category, index }: { category: Category, i
                             {item.tags && item.tags.length > 0 && (
                                 <div className="flex flex-wrap gap-2 mt-auto">
                                     {item.tags.map(tag => (
-                                        <span key={tag} className="text-xs font-bold px-3 py-1 rounded-full bg-accent-pitaya/10 text-accent-pitaya">
+                                        <span key={tag} className="font-display uppercase tracking-widest text-[10px] font-bold px-3 py-1 rounded-full bg-accent-pitaya/10 text-accent-pitaya border border-accent-pitaya/20 shadow-sm">
                                             {tag}
                                         </span>
                                     ))}

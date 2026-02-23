@@ -27,7 +27,7 @@ export default function Navbar() {
                     </Link>
 
                     {/* Navigation Links (Middle) */}
-                    <nav className="flex items-center gap-8 font-heading font-bold text-xl text-text-dark px-4">
+                    <nav className="flex items-center gap-8 font-display font-bold uppercase tracking-wide text-[15px] text-text-dark px-4">
                         <Link href="/menu" className="hover:text-accent-mango transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-accent-mango hover:after:w-full after:transition-all after:duration-300">
                             Menu
                         </Link>
@@ -49,7 +49,7 @@ export default function Navbar() {
                 <div className="flex-1 flex justify-end">
                     <Link
                         href="/menu"
-                        className="bg-accent-mango text-white px-8 py-3.5 rounded-full font-heading font-bold hover:bg-[#e0a100] transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+                        className="bg-accent-mango text-white px-8 py-3.5 rounded-full font-display font-bold uppercase text-[14px] tracking-wider hover:bg-[#e0a100] transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
                     >
                         View Menu
                     </Link>
