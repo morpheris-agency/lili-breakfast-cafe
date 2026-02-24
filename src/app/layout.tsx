@@ -4,7 +4,7 @@ import './globals.css'
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
-import { sanityFetch } from "@/sanity/lib/live";
+import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 import { getGlobalSettingsQuery } from "@/sanity/lib/queries";
 
 // --- ORIGINAL PAIRING ---
@@ -27,6 +27,8 @@ export const metadata: Metadata = {
   title: "Lili Breakfast Cafe | Pai, Thailand",
   description: "Healthy and generous coffee shop in Pai. Smoothie bowls, cold-pressed juices, and big breakfast sets.",
 };
+
+export const dynamic = 'force-dynamic';
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
 
@@ -63,6 +65,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           </main>
           <Footer />
         </SmoothScrollProvider>
+        <SanityLive />
       </body>
     </html>
   )
