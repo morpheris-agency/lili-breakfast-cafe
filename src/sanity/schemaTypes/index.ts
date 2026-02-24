@@ -1,10 +1,5 @@
-import type { SchemaTypeDefinition } from 'sanity'
-import { categoryType } from './categoryType'
-import { menuItemType } from './menuItemType'
-import { siteSettingsType } from './siteSettingsType'
+import category from './category'
+import menuItem from './menuItem'
+import globalSettings from './globalSettings'
 
-export const schemaTypes: SchemaTypeDefinition[] = [
-    categoryType,
-    menuItemType,
-    siteSettingsType,
-]
+export const schemaTypes = [category, menuItem, globalSettings]

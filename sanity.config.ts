@@ -11,7 +11,27 @@ export default defineConfig({
 
     basePath: '/studio',
 
-    plugins: [structureTool()],
+    plugins: [
+        structureTool({
+            structure: (S) =>
+                S.list()
+                    .title('Content')
+                    .items([
+                        S.listItem()
+                            .title('Global Settings')
+                            .id('globalSettings')
+                            .child(
+                                S.document()
+                                    .schemaType('globalSettings')
+                                    .documentId('globalSettings')
+                            ),
+                        S.divider(),
+                        ...S.documentTypeListItems().filter(
+                            (listItem) => !['globalSettings'].includes(listItem.getId() as string)
+                        ),
+                    ]),
+        }),
+    ],
 
     schema: {
         types: schemaTypes,
