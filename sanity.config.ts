@@ -1,6 +1,8 @@
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { schemaTypes } from './src/sanity/schemaTypes'
+import { colorInput } from '@sanity/color-input'
+import { myTheme } from './src/sanity/theme'
 
 export default defineConfig({
     name: 'default',
@@ -11,19 +13,22 @@ export default defineConfig({
 
     basePath: '/studio',
 
+    theme: myTheme,
+
     plugins: [
         structureTool({
             structure: (S) =>
                 S.list()
-                    .title('Content')
+                    .title('Content Panel')
                     .items([
                         S.listItem()
-                            .title('Global Settings')
+                            .title('Site Configuration')
                             .id('globalSettings')
                             .child(
                                 S.document()
                                     .schemaType('globalSettings')
                                     .documentId('globalSettings')
+                                    .title('Site Configuration')
                             ),
                         S.divider(),
                         ...S.documentTypeListItems().filter(
@@ -31,6 +36,7 @@ export default defineConfig({
                         ),
                     ]),
         }),
+        colorInput(),
     ],
 
     schema: {
