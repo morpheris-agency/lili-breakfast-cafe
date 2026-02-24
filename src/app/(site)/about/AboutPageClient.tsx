@@ -3,7 +3,42 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-export default function AboutPage() {
+type AboutData = {
+    headerTag?: string;
+    headerTitle?: string;
+    storyHeading?: string;
+    storyParagraphs?: string[];
+    quote?: string;
+    storyImageUrl?: string;
+    footerHeading?: string;
+    footerText?: string;
+}
+
+export default function AboutPageClient({ data }: { data?: AboutData }) {
+    // Fallbacks
+    const headerTag = data?.headerTag || "Our Story";
+    const headerTitleRaw = data?.headerTitle || "The ||Magic|| of Pai";
+    const storyHeading = data?.storyHeading || "From a tiny cart to \na conscious space.";
+    const storyParagraphs = data?.storyParagraphs || [
+        "It all started with a simple belief: breakfast is the most important, and should be the most joyful, meal of the day. Lili arrived in Pai seeking quietness, but found a vibrant community of travelers, artists, and locals.",
+        "We source our lush fruits from local farmers in the Mae Hong Son province, ensuring that every smoothie bowl gives back to the land that provides it."
+    ];
+    const quote = data?.quote || "Eat good, feel good, do good.";
+    const footerHeading = data?.footerHeading || "Come say hi!";
+    const footerText = data?.footerText || "Whether you're here to work, to chat, or to silently enjoy the mountain breeze and a flat white, there's always a seat for you.";
+    const imageUrl = data?.storyImageUrl || "/images/pai_coffee_shop.png";
+
+    // Logic to highlight words marked with ||Magic||
+    const renderTitle = (text: string) => {
+        const parts = text.split(/\|\|(.*?)\|\|/);
+        return parts.map((part, index) => {
+            if (index % 2 === 1) {
+                return <span key={index} className="text-accent-sky">{part}</span>;
+            }
+            return part;
+        });
+    };
+
     return (
         <div className="max-w-5xl mx-auto px-6 md:px-12 py-12 md:py-24 overflow-hidden">
 
@@ -15,15 +50,15 @@ export default function AboutPage() {
                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
                     className="inline-block px-5 py-2.5 bg-accent-mango/20 text-accent-mango font-display font-black uppercase tracking-widest rounded-full text-[11px] mb-6"
                 >
-                    Our Story
+                    {headerTag}
                 </motion.div>
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="font-script text-5xl text-text-dark mb-6"
+                    className="font-script text-5xl text-text-dark mb-6 whitespace-pre-line"
                 >
-                    The <span className="text-accent-sky">Magic</span> of Pai
+                    {renderTitle(headerTitleRaw)}
                 </motion.h1>
             </div>
 
@@ -36,7 +71,7 @@ export default function AboutPage() {
                     transition={{ type: "spring", stiffness: 100, damping: 20 }}
                     className="relative aspect-[4/5] w-full max-w-md mx-auto rounded-[4rem] overflow-hidden shadow-xl border-4 border-white"
                 >
-                    <Image src="/images/pai_coffee_shop.png" alt="Pai Coffee Shop" fill className="object-cover" />
+                    <Image src={imageUrl} alt="Story Image" fill className="object-cover" />
                 </motion.div>
 
                 <motion.div
@@ -46,19 +81,18 @@ export default function AboutPage() {
                     transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
                     className="flex flex-col gap-6"
                 >
-                    <h2 className="font-script text-5xl leading-tight text-text-dark">
-                        From a tiny cart to <br />a conscious space.
+                    <h2 className="font-script text-5xl leading-tight text-text-dark whitespace-pre-line">
+                        {storyHeading}
                     </h2>
                     <div className="space-y-4 text-text-dark/80 font-body text-lg leading-relaxed">
-                        <p>
-                            It all started with a simple belief: breakfast is the most important, and should be the most joyful, meal of the day. Lili arrived in Pai seeking quietness, but found a vibrant community of travelers, artists, and locals.
-                        </p>
-                        <p>
-                            We source our lush fruits from local farmers in the Mae Hong Son province, ensuring that every smoothie bowl gives back to the land that provides it.
-                        </p>
-                        <p className="font-script font-normal text-accent-mango text-3xl mt-4 italic">
-                            "Eat good, feel good, do good."
-                        </p>
+                        {storyParagraphs.map((p, idx) => (
+                            <p key={idx}>{p}</p>
+                        ))}
+                        {quote && (
+                            <p className="font-script font-normal text-accent-mango text-3xl mt-4 italic">
+                                "{quote}"
+                            </p>
+                        )}
                     </div>
                 </motion.div>
             </div>
@@ -73,10 +107,10 @@ export default function AboutPage() {
             >
                 <div className="absolute top-0 right-0 w-64 h-64 bg-accent-mango/20 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2" />
                 <h3 className="font-script text-5xl text-text-dark mb-6">
-                    Come say hi!
+                    {footerHeading}
                 </h3>
-                <p className="text-lg font-body text-text-dark/70 max-w-xl mx-auto mb-8">
-                    Whether you're here to work, to chat, or to silently enjoy the mountain breeze and a flat white, there's always a seat for you.
+                <p className="text-lg font-body text-text-dark/70 max-w-xl mx-auto mb-8 whitespace-pre-line">
+                    {footerText}
                 </p>
             </motion.div>
 

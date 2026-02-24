@@ -1,0 +1,14 @@
+{
+    "_type": "aboutPage",
+    "_id": "aboutPage",
+    "headerTag": "Our Story",
+    "headerTitle": "The ||Magic|| of Pai",
+    "storyHeading": "From a tiny cart to a conscious space.",
+    "storyParagraphs": [
+        "It all started with a simple belief: breakfast is the most important, and should be the most joyful, meal of the day. Lili arrived in Pai seeking quietness, but found a vibrant community of travelers, artists, and locals.",
+        "We source our lush fruits from local farmers in the Mae Hong Son province, ensuring that every smoothie bowl gives back to the land that provides it."
+    ],
+    "quote": "Eat good, feel good, do good.",
+    "footerHeading": "Come say hi!",
+    "footerText": "Whether you're here to work, to chat, or to silently enjoy the mountain breeze and a flat white, there's always a seat for you."
+}

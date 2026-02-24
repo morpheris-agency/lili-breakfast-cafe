@@ -1,14 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
+import { sanityFetch } from "@/sanity/lib/live";
+import { getGlobalSettingsQuery } from "@/sanity/lib/queries";
 
-export default function Navbar() {
+export default async function Navbar() {
+    const { data: settings } = await sanityFetch({ query: getGlobalSettingsQuery });
+    const siteName = settings?.siteName || "Lili Breakfast Cafe";
+
     return (
         <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 bg-bg-primary/95 backdrop-blur-md shadow-sm border-b border-text-dark/5 h-[100px]">
 
             {/* Mobile View */}
             <div className="md:hidden flex items-center justify-between w-full relative">
                 <Link href="/" className="flex items-center group relative w-20 h-20 shrink-0">
-                    <Image src="/logo.svg" alt="Lili Cafe Logo" fill className="object-contain object-left transition-transform duration-300" priority />
+                    <Image src="/logo.svg" alt={`${siteName} Logo`} fill className="object-contain object-left transition-transform duration-300" priority />
                 </Link>
                 <div className="flex gap-4 items-center">
                     <Link
@@ -31,7 +36,7 @@ export default function Navbar() {
 
                     {/* Logo (Leftside) */}
                     <Link href="/" className="relative w-[84px] h-[84px] shrink-0 hover:scale-105 transition-transform duration-300">
-                        <Image src="/logo.svg" alt="Lili Cafe Logo" fill className="object-contain" priority />
+                        <Image src="/logo.svg" alt={`${siteName} Logo`} fill className="object-contain" priority />
                     </Link>
 
                     {/* Navigation Links (Middle) */}

@@ -1,16 +1,28 @@
 export type MenuItem = {
     _id: string;
     title: string;
-    description: string;
+    description?: string;
     price: number;
-    isBestSeller: boolean;
+    isBestSeller?: boolean;
     imageUrl?: string;
+    isChefsRecommendation?: boolean;
+    promotionalBadge?: string;
+    variants?: { name: string; price: number }[];
+    addons?: { name: string; price: number }[];
+    spiceLevel?: number;
+    preparationTime?: string;
+    nutritionalInfo?: { calories?: number; protein?: number };
+    allergens?: string[];
 };
 
 export type MenuCategory = {
     _id: string;
     title: string;
     description?: string;
+    isVisible?: boolean;
+    availability?: string;
+    layoutStyle?: 'grid' | 'list';
+    heroImageUrl?: string;
     items: MenuItem[];
 };
 

@@ -8,7 +8,7 @@ type MenuItem = {
     title: string
     price: number
     description: string
-    tags: string[]
+    isBestSeller?: boolean
     imageUrl: string | null
 }
 
@@ -71,13 +71,11 @@ export default function MenuSection({ category, index }: { category: Category, i
                                 {item.description}
                             </p>
 
-                            {item.tags && item.tags.length > 0 && (
+                            {item.isBestSeller && (
                                 <div className="flex flex-wrap gap-2 mt-auto">
-                                    {item.tags.map(tag => (
-                                        <span key={tag} className="font-display uppercase tracking-widest text-[10px] font-bold px-3 py-1 rounded-full bg-accent-pitaya/10 text-accent-pitaya border border-accent-pitaya/20 shadow-sm">
-                                            {tag}
-                                        </span>
-                                    ))}
+                                    <span className="font-display uppercase tracking-widest text-[10px] font-bold px-3 py-1 rounded-full bg-accent-pitaya/10 text-accent-pitaya border border-accent-pitaya/20 shadow-sm">
+                                        ✨ Best Seller
+                                    </span>
                                 </div>
                             )}
                         </div>

@@ -5,7 +5,15 @@ import Button from '../ui/Button'
 import { useRef } from 'react'
 import Image from 'next/image'
 
-export default function Hero() {
+export default function Hero({
+    heading,
+    subheading,
+    primaryCta
+}: {
+    heading?: string,
+    subheading?: string,
+    primaryCta?: string
+}) {
     const ref = useRef(null)
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -15,6 +23,11 @@ export default function Hero() {
     // Parallax effects
     const yImage = useTransform(scrollYProgress, [0, 1], [0, 150])
     const yBlobs = useTransform(scrollYProgress, [0, 1], [0, -100])
+
+    // Fallbacks
+    const finalHeading = heading || "Nourish your\nbody, feed your\nsoul.";
+    const finalSubheading = subheading || "Discover a taste of nature with our vibrant smoothie bowls, cold-pressed juices, and hearty breakfast plates.";
+    const finalCta = primaryCta || "View Menu";
 
     return (
         <section ref={ref} className="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-6 md:px-12 pt-12 md:pt-0">
@@ -46,19 +59,20 @@ export default function Hero() {
                         Organic & Fresh in Pai 🌱
                     </motion.div>
 
-                    <h1 className="font-script text-5xl leading-[1.1] text-text-dark tracking-normal">
-                        Nourish your <br />
-                        body, <span className="text-accent-pitaya">feed</span> your <br />
-                        soul.
-                    </h1>
+                    <h1
+                        className="font-script text-5xl md:text-6xl leading-[1.1] text-text-dark tracking-normal whitespace-pre-line"
+                        dangerouslySetInnerHTML={{
+                            __html: finalHeading.replace('feed', '<span class="text-accent-pitaya">feed</span>')
+                        }}
+                    />
 
-                    <p className="text-lg md:text-xl text-text-dark/80 max-w-md font-body leading-relaxed">
-                        Discover a taste of nature with our vibrant smoothie bowls, cold-pressed juices, and hearty breakfast plates.
+                    <p className="text-lg md:text-xl text-text-dark/80 max-w-md font-body leading-relaxed whitespace-pre-line">
+                        {finalSubheading}
                     </p>
 
                     <div className="flex flex-wrap items-center gap-4 mt-4">
                         <Button href="/menu" variant="primary">
-                            View Menu
+                            {finalCta}
                         </Button>
                         <Button href="/about" variant="secondary">
                             Our Story

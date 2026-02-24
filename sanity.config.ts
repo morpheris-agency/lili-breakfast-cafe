@@ -3,6 +3,8 @@ import { structureTool } from 'sanity/structure'
 import { schemaTypes } from './src/sanity/schemaTypes'
 import { colorInput } from '@sanity/color-input'
 import { myTheme } from './src/sanity/theme'
+import { structure } from './src/sanity/structure'
+import { StudioLogo } from './src/sanity/StudioLogo'
 
 export default defineConfig({
     name: 'default',
@@ -15,27 +17,14 @@ export default defineConfig({
 
     theme: myTheme,
 
+    studio: {
+        components: {
+            logo: StudioLogo,
+        }
+    },
+
     plugins: [
-        structureTool({
-            structure: (S) =>
-                S.list()
-                    .title('Content Panel')
-                    .items([
-                        S.listItem()
-                            .title('Site Configuration')
-                            .id('globalSettings')
-                            .child(
-                                S.document()
-                                    .schemaType('globalSettings')
-                                    .documentId('globalSettings')
-                                    .title('Site Configuration')
-                            ),
-                        S.divider(),
-                        ...S.documentTypeListItems().filter(
-                            (listItem) => !['globalSettings'].includes(listItem.getId() as string)
-                        ),
-                    ]),
-        }),
+        structureTool({ structure }),
         colorInput(),
     ],
 

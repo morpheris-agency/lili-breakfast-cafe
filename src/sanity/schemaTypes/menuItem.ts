@@ -37,7 +37,7 @@ export default defineType({
         }),
         defineField({
             name: 'price',
-            title: 'Price (THB)',
+            title: 'Base Price (THB)',
             type: 'number',
             group: 'pricing',
             validation: (rule) => rule.required().positive()
@@ -51,6 +51,81 @@ export default defineType({
             initialValue: false
         }),
         defineField({
+            name: 'isChefsRecommendation',
+            title: 'Chef\'s Recommendation? (👨‍🍳)',
+            description: 'Adds a special "Chef\'s Choice" badge',
+            type: 'boolean',
+            group: 'pricing',
+            initialValue: false
+        }),
+        defineField({
+            name: 'promotionalBadge',
+            title: 'Promotional Badge',
+            description: 'Temporary tag (e.g. "Sold Out", "New", "Weekend Special")',
+            type: 'string',
+            group: 'pricing'
+        }),
+        defineField({
+            name: 'variants',
+            title: 'Size/Type Variants',
+            description: 'e.g. "Hot" vs "Iced", or "Regular" vs "Large". If used, these OVERRIDE the Base Price above.',
+            type: 'array',
+            group: 'pricing',
+            of: [
+                {
+                    type: 'object',
+                    fields: [
+                        { name: 'name', title: 'Variant Name', type: 'string', description: 'e.g. Large' },
+                        { name: 'price', title: 'Price (THB)', type: 'number' }
+                    ]
+                }
+            ]
+        }),
+        defineField({
+            name: 'addons',
+            title: 'Add-ons / Extras',
+            description: 'e.g. "+30 THB for Gouda Cheese"',
+            type: 'array',
+            group: 'pricing',
+            of: [
+                {
+                    type: 'object',
+                    fields: [
+                        { name: 'name', title: 'Add-on Name', type: 'string', description: 'e.g. Extra Bacon' },
+                        { name: 'price', title: 'Extra Cost (THB)', type: 'number' }
+                    ]
+                }
+            ]
+        }),
+
+        // --- DIETARY & PREP ---
+        defineField({
+            name: 'spiceLevel',
+            title: 'Spice Level (0-3)',
+            type: 'number',
+            group: 'details',
+            description: '0 = Not spicy at all. 3 = Very Spicy 🌶️🌶️🌶️',
+            initialValue: 0,
+            validation: rule => rule.min(0).max(3)
+        }),
+        defineField({
+            name: 'preparationTime',
+            title: 'Estimated Prep Time',
+            type: 'string',
+            group: 'details',
+            description: 'e.g. "15-20 mins"'
+        }),
+        defineField({
+            name: 'nutritionalInfo',
+            title: 'Nutritional Info',
+            type: 'object',
+            group: 'details',
+            fields: [
+                { name: 'calories', title: 'Calories (kcal)', type: 'number' },
+                { name: 'protein', title: 'Protein (g)', type: 'number' }
+            ]
+        }),
+        defineField({
             name: 'allergens',
             title: 'Allergens / Dietary',
             type: 'array',
@@ -60,11 +135,11 @@ export default defineType({
                     { title: 'Vegan (V)', value: 'vegan' },
                     { title: 'Vegetarian (VEG)', value: 'vegetarian' },
                     { title: 'Gluten-Free (GF)', value: 'gluten-free' },
+                    { title: 'Dairy-Free (DF)', value: 'dairy-free' },
                     { title: 'Contains Nuts', value: 'nuts' },
-                    { title: 'Spicy (🌶️)', value: 'spicy' },
                 ],
             },
-            group: 'pricing'
+            group: 'details'
         }),
         defineField({
             name: 'image',
