@@ -15,3 +15,9 @@ export const getMenuQuery = groq`
     }
   }
 `
+
+export const getGlobalSettingsQuery = groq`
+  *[_type == "globalSettings"][0] {
+    fontPairing
+  }
+`
